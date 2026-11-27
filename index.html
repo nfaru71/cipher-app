@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#101113">
+<link rel="manifest" href="manifest.json">
+<title>CIPHER Calculator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main id="calc" class="screen">
+<div class="brand">CALCULATOR</div>
+<input id="display" aria-label="Calculator display" readonly value="0">
+<section class="keys" id="keys" aria-label="Calculator"></section>
+</main>
+
+<main id="chat" class="screen hidden">
+<header>
+<div><strong>CIPHER</strong><small id="status">Locked</small></div>
+<button id="panic" type="button" aria-label="Return to calculator" title="Lock and return">×</button>
+</header>
+
+<section id="unlock" class="panel">
+<h1>Unlock</h1>
+<form id="unlockForm">
+<input id="passphrase" type="password" autocomplete="off" placeholder="Shared passphrase" required>
+<button id="unlockBtn" type="submit">Unlock chat</button>
+</form>
+<p id="unlockError" class="error" role="alert"></p>
+</section>
+
+<section id="room" class="hidden">
+<nav>
+<button class="tab active" type="button" data-tab="messages">Messages</button>
+<button class="tab" type="button" data-tab="setup">Setup</button>
+</nav>
+
+<section id="messages" class="tabbody">
+<div id="history" aria-live="polite"></div>
+<form id="sendForm">
+<input id="message" autocomplete="off" placeholder="Message" aria-label="Message">
+<button type="submit" aria-label="Send" title="Send">↑</button>
+</form>
+</section>
+
+<section id="setup" class="tabbody hidden">
+<h2>Connection</h2>
+<label>Bale bot token<input id="token" type="password" autocomplete="off"></label>
+<label>Peer chat ID<input id="peer" inputmode="text" autocomplete="off"></label>
+<button id="saveSetup" type="button">Save on this device</button>
+<button id="pollNow" type="button" class="secondary">Poll now</button>
+<p id="setupStatus" class="hint" aria-live="polite"></p>
+<p class="hint">The shared passphrase is requested each session and is not stored.</p></section></section></main><script src="app.js" defer></script></body></html>
+</section>
+</section>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
